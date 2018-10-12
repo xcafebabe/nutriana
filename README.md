@@ -2,6 +2,21 @@
 * MySQL
 * Oracle
 
+### Docker support
+
+**Requirements**
+
+- docker
+- docker-compose
+
+You can instantiate in a couple of minutes a MariaDB database and access usda_nndsr data
+
+```
+sudo docker-compose up
+```
+
+When containers are up and running, go to http://localhost:8080 and you will be able to navigate usda_nndsr data.
+
 ### Nutrient Databases Included
 * Health Canada, 2015. Canadian Nutrient File
   www.healthcanada.gc.ca/cnf

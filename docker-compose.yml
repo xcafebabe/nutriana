@@ -1,0 +1,24 @@
+version: "3"
+services:
+  mariadb:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: geheim2018
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: root
+      PMA_PASSWORD: geheim2018
+    ports:
+      - "8080:80"
+  loader:
+    image: mariadb
+    environment:
+      MYSQL_HOST: mariadb
+      MYSQL_ROOT_PASSWORD: geheim2018
+    volumes:
+      - .:/nutriana
+    command: ["/nutriana/wait-for-it.sh"]
+
+  
